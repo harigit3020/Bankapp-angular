@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Users</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-9">
+                <h2>Transaction History</h2>
+                <table class="table">
+                   <tr>
+                       <th>Id</th>
+                       <th>Username</th>
+                       <th>Actions</th>
+               
+                   </tr>
+                       <tr *ngFor="let user of users">
+                       <td>{{user._id}}</td>
+                       <td>{{user.username | uppercase}}</td>
+                       <td (click)="deleteUser(user._id)">Delete</td>                   
+                   </tr>
+                </table>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+</body>
+
+</html>

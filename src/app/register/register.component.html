@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>RegisterPage</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div class="jumbotron">
+                    <h2>Registration</h2>
+                    <form (ngSubmit)="onRegClick()" > 
+                        <div class="form-group">
+                            <label for="uname">Username</label>
+                            <input (change)="onUsernameChange($event)" type="text" class="form-control" id="uname" name="usname"  aria-describedby="emailHelp"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input (change)="onPasswordChange($event)" type="password" class="form-control" name="password" id="password"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="conpass">Confirm Password</label>
+                            <input (change)="onConpassChange($event)" type="password" class="form-control" name="conpass" id="conpass"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="acntno">Account Number</label>
+                            <input (change)="onAcntnoChange($event)" type="text" class="form-control" name="acntno" id="acntno"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+</body>
+</html>

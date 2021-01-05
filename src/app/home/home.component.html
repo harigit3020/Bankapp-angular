@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>Home page</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-5">
+                <div class="jumbotron">
+                    <h2>Deposit</h2>
+                    <form [formGroup]="depositForm" (ngSubmit)="onDeposit()" > 
+                        <div class="form-group">
+                            <label for="uname">Username</label>
+                            <input formControlName="usernamedep" type="text" class="form-control" id="uname" name="usname"  aria-describedby="emailHelp"/>
+                            <div *ngIf="depositForm.get('usernamedep').touched&&depositForm.get('usernamedep').errors" class="errors">Username Required</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="amt">Amount</label>
+                            <input formControlName="amountdep" type="text" class="form-control" name="amt" id="exampleInputPassword1"/>
+                            <div *ngIf="depositForm.get('amountdep').touched&&depositForm.get('amountdep').errors" class="errors" >Enter an Amount</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-2">
+             Balance:{{balance}}
+             <br>
+             <a routerLink="/transaction-history">Transaction History</a>
+            </div>
+            <div class="col-5">
+                <div class="jumbotron">
+                    <h2>Withdrawel</h2>
+                    <form [formGroup]="withdrawForm" (ngSubmit)="onWithraw()" > 
+                        <div class="form-group">
+                            <label for="uname">User name</label>
+                            <input formControlName="usernamewith" type="text" class="form-control" id="uname" name="usname"  aria-describedby="emailHelp"/>
+                            <div *ngIf="withdrawForm.get('usernamewith').touched&&withdrawForm.get('usernamewith').errors" class="errors">Username Required</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="amt">Amount</label>
+                            <input formControlName="amountwith" type="text" class="form-control" name="amt" id="exampleInputPassword1"/>
+                            <div *ngIf="withdrawForm.get('amountwith').touched&&withdrawForm.get('amountwith').errors" class="errors">Enter an Amount</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
